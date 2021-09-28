@@ -1,0 +1,9 @@
+[package]
+name = "xlsx-to-csv"
+version = "1.0.0"
+authors = ["Ruslan Ianberdin <happierall@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+office = "0.8"
+calamine = { version = "0.18", features = ["dates"] }

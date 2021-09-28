@@ -1,0 +1,41 @@
+{
+  "name": "xlsx-to-csv",
+  "version": "1.0.0",
+  "description": "Fastest xlsx to csv converter",
+  "main": "dist/index.js",
+  "bin": {
+    "xlsx-to-csv": "./dist/npm/run.js"
+  },
+  "scripts": {
+    "build:binary": "./cli/build-binary.sh",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "postinstall": "node dist/npm/install.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianberdin/xlsx-to-csv.git"
+  },
+  "keywords": [
+    "xlsx",
+    "csv",
+    "convert",
+    "xls"
+  ],
+  "author": "Ruslan Ianberdin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianberdin/xlsx-to-csv/issues"
+  },
+  "homepage": "https://github.com/ianberdin/xlsx-to-csv#readme",
+  "devDependencies": {
+    "@types/node": "^16.10.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "binary-install": "^0.1.1"
+  }
+}
