@@ -22,7 +22,7 @@ fn main() {
     let mut xl = open_workbook_auto(&sce).unwrap();
 
     if sheet.is_none() {
-        sheet =  xl.sheet_names().first().cloned();
+        sheet = xl.sheet_names().first().cloned();
     }
 
     let range = xl.worksheet_range(&sheet.unwrap()).unwrap().unwrap();
@@ -31,21 +31,24 @@ fn main() {
 }
 
 fn write_range<W: Write>(dest: &mut W, range: &Range<DataType>) -> std::io::Result<()> {
-    let n = range.get_size().1 - 1;
-    for r in range.rows() {
-        for (i, c) in r.iter().enumerate() {
-            match *c {
+    let rows_height = range.get_size().1 - 1;
+
+    for (_row_index, row) in range.rows().enumerate() {
+        for (cell_index, cell) in row.iter().enumerate() {
+            match *cell {
                 DataType::Empty => Ok(()),
                 DataType::String(ref s) => write!(dest, "{}", s),
                 DataType::Float(ref f) => write!(dest, "{}", f),
                 DataType::DateTime(ref _f) => {
-                    write!(dest, "{}", DataType::as_date(c).unwrap())
-                },
+
+                    // Format as DD/MM/YY
+                    write!(dest, "{}", DataType::as_date(cell).unwrap().format("%d/%m/%y"))
+                }
                 DataType::Int(ref i) => write!(dest, "{}", i),
                 DataType::Error(ref e) => write!(dest, "{:?}", e),
                 DataType::Bool(ref b) => write!(dest, "{}", b),
             }?;
-            if i != n {
+            if cell_index != rows_height {
                 write!(dest, ";")?;
             }
         }

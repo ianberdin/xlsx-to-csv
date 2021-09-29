@@ -8,7 +8,7 @@ Fastest xlsx to csv converter based on Rust package [Calamine](https://github.co
 It accepts .xlsx and .csv file types.
 ```typescript
 import fs from 'fs'
-import { convertFile } from 'xslx-to-csv'
+import { convertFile } from 'xlsx-to-csv'
 
 const { filePath } = convertFile('./file.xlsx')
 console.log(filePath)

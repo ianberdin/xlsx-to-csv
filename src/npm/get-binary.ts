@@ -4,7 +4,7 @@ import { spawnSync } from 'child_process'
 
 
 const NAME = 'xlsx-to-csv'
-const VERSION = '1.0.0'
+const VERSION = '1.0.1'
 
 function getPlatform() {
   const type = os.type()
