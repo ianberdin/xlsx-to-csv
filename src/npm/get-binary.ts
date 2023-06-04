@@ -4,7 +4,7 @@ import { spawnSync } from 'child_process'
 
 
 const NAME = 'xlsx-to-csv'
-const VERSION = '1.0.1'
+const VERSION = '1.0.2'
 
 function getPlatform() {
   const type = os.type()
@@ -14,7 +14,7 @@ function getPlatform() {
   if ( type === 'Windows_NT' ) return 'win32'
   if ( type === 'Linux' && arch === 'x64' ) return 'linux'
   if ( type === 'Darwin' && arch === 'x64' ) return 'macos-x86_64'
-  if ( type === 'Darwin' && arch === 'arm64' ) return 'aarch64'
+  if ( type === 'Darwin' && arch === 'arm64' ) return 'macos-aarch64'
 
   throw new Error(`Unsupported platform: ${ type } ${ arch }`)
 }
