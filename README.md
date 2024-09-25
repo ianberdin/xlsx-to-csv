@@ -44,7 +44,7 @@ The options object allows you to configure the conversion with the following fie
 ### Example Usage
 
 ```typescript
-import {convertFile} from 'your-library-name';
+import {convertFile} from 'xlsx-to-csv';
 
 // Convert an Excel file to CSV and save it to a specific path
 convertFile('example.xlsx', {
@@ -56,7 +56,7 @@ convertFile('example.xlsx', {
 
 // Convert an Excel file to CSV and return the result as a string
 const csvData = convertFile('example.xlsx', {
-    sheet: 'Sheet1',
+    sheet: 'Sheet1', // Optional, we can take the first sheet by default
     delimiter: ';',
     dest: 'return',
     datetimeFormat: '%Y-%m-%d'
@@ -64,18 +64,6 @@ const csvData = convertFile('example.xlsx', {
 
 console.log(csvData);
 ```
-
-### CLI Arguments Mapping
-
-This library internally runs a binary command with the following mappings:
-
-| Option           | CLI Argument                 |
-|------------------|------------------------------|
-| `filePath`       | `--file <filePath>`          |
-| `sheet`          | `--sheet <sheet>`            |
-| `delimiter`      | `--delimiter <delimiter>`    |
-| `dest`           | `--dest <dest>`              |
-| `datetimeFormat` | `--datetime-format <format>` |
 
 ### Additional Information
 
