@@ -12,13 +12,12 @@ buildAndPack () {
 
   cargo build --release --target=$target
 
-  mkdir -p ../builds/$name-$humanTarget
-  cp target/$target/release/$name$ext ../builds/$name-$humanTarget
+  mv target/$target/release/$name$ext ../dist/$name-$humanTarget
 
-  tar -C ../builds -czvf ../builds/$name-$humanTarget.tar.gz $name-$humanTarget
+  #  tar -C ../builds -czvf ../dist/$name-$humanTarget.tar.gz $name-$humanTarget
 }
 
-buildAndPack "x86_64-apple-darwin" "macos-x86_64" ""
 buildAndPack "aarch64-apple-darwin" "macos-aarch64" ""
+buildAndPack "x86_64-apple-darwin" "macos-x86_64" ""
 buildAndPack "x86_64-pc-windows-gnu" "win64" ".exe"
-buildAndPack "x86_64-unknown-linux-musl" "linux" ""
+buildAndPack "x86_64-unknown-linux-gnu" "linux" ""

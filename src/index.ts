@@ -1,18 +1,51 @@
-import * as binary from './npm/get-binary'
-import { changeExtension } from './utils'
+import * as binary from './get-binary'
 
+interface ConvertFileOptions {
+    // Sheet name to convert
+    // Default first sheet
+    sheet?: string
 
-export function convertFile( filePath: string, sheetName?: string ) {
-  const args = [filePath]
-  if ( sheetName ) {
-    args.push(sheetName)
-  }
+    // Output delimiter for CSV file
+    // Default is ';'
+    delimiter?: ',' | ';' | string
 
-  binary.run(...args)
+    // Destination file path or 'return' to return the CSV data
+    // Default is 'stdout'
+    dest?: string | 'return'
 
-  return { filePath: changeExtension(filePath, '.csv') }
+    // Datetime format for parsing datetime values
+    // See available options: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+    // Default is '%Y-%m-%d %H:%M:%S'
+    datetimeFormat?: string
+}
+
+export function convertFile(filePath: string, options: ConvertFileOptions = {}): string {
+    const args = [
+        '--file', filePath,
+    ]
+
+    if (options.sheet) {
+        args.push('--sheet', options.sheet)
+    }
+    if (options.delimiter) {
+        args.push('--delimiter', options.delimiter)
+    }
+
+    if (options.datetimeFormat) {
+        args.push('--datetime-format', options.datetimeFormat)
+    }
+
+    if (options.dest) {
+        if (options.dest === 'return') {
+            args.push('--dest', 'stdout')
+        } else {
+            args.push('--dest', options.dest)
+        }
+    }
+
+    return binary.run(...args).output.toString()
 }
 
 export default {
-  convertFile,
+    convertFile,
 }

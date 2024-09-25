@@ -111,3 +111,6 @@ dist/
 builds/
 
 .idea/
+
+# Examples csv files
+example/*.csv

@@ -1,9 +1,10 @@
 [package]
 name = "xlsx-to-csv"
-version = "1.0.1"
-authors = ["Ruslan Ianberdin <happierall@gmail.com>"]
+version = "2.0.0"
 edition = "2018"
 
 [dependencies]
-office = "0.8"
-calamine = { version = "0.18", features = ["dates"] }
+office = "0.8.1"
+calamine = { version = "0.25.0", features = ["dates"] }
+clap = { version = "4.5.18", features = ["derive"] }
+chrono = "0.4.38"
