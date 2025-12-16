@@ -65,6 +65,8 @@ const csvData = convertFile('example.xlsx', {
 console.log(csvData);
 ```
 
+> **Tip:** Want to quickly test TypeScript snippets? Try the [JavaScript Compiler](https://playcode.io/javascript-compiler) - an online playground with full TypeScript support.
+
 ### Additional Information
 
 - The library supports a variety of Excel formats (`.xlsx`, `.xls`, `.xlsm`, `.xlsb`).
@@ -74,7 +76,8 @@ console.log(csvData);
 ### Credits
 
 - The maintainer is founder of [PlayCode.io](https://playcode.io) - an online code playground for web development.
-- [Javascript Online Compiler](https://playcode.io/javascript-compiler) - Run your javascript code online.
+- [JavaScript Compiler](https://playcode.io/javascript-compiler) - Run JavaScript and TypeScript code online.
+- [TypeScript Playground](https://playcode.io/typescript) - Instant TypeScript development environment.
 
 ### Contributing
 
@@ -103,4 +106,3 @@ This project is licensed under the MIT License.
 ---
 
 Feel free to open an issue or contribute to the repository if you encounter any bugs or have feature suggestions!
-
