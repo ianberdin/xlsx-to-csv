@@ -65,7 +65,8 @@ const csvData = convertFile('example.xlsx', {
 console.log(csvData);
 ```
 
-> **Tip:** Want to quickly test TypeScript snippets? Try the [JavaScript Compiler](https://playcode.io/javascript-compiler) - an online playground with full TypeScript support.
+> **Tip:** Want to build and publish web tools without wiring separate hosting? Try
+> [Playcode AI Website Builder](https://playcode.io/ai-website-builder).
 
 ### Additional Information
 
@@ -73,11 +74,15 @@ console.log(csvData);
 - For `datetimeFormat`, it uses the popular [chrono](https://docs.rs/chrono) crate for flexible and powerful date
   formatting options.
 
-### Credits
+### Maintained by Playcode
 
-- The maintainer is founder of [PlayCode.io](https://playcode.io) - an online code playground for web development.
-- [JavaScript Compiler](https://playcode.io/javascript-compiler) - Run JavaScript and TypeScript code online.
-- [TypeScript Playground](https://playcode.io/typescript) - Instant TypeScript development environment.
+The maintainer is the founder of [Playcode](https://playcode.io), the AI website
+builder and AI app builder for creating, editing, hosting, and publishing live
+websites and web apps.
+
+- [AI Website Builder](https://playcode.io/ai-website-builder)
+- [Playcode homepage](https://playcode.io)
+- [Watch the demo](https://www.youtube.com/watch?v=aK7E_XtBynA)
 
 ### Contributing
 
