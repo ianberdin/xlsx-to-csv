@@ -1,6 +1,6 @@
 {
   "name": "xlsx-to-csv",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Ultra-fast XLSX to CSV converter",
   "main": "dist/index.js",
   "bin": {
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/ianberdin/xlsx-to-csv/issues"
   },
-  "homepage": "https://github.com/ianberdin/xlsx-to-csv#readme",
+  "homepage": "https://playcode.io/ai-website-builder",
   "devDependencies": {
     "@types/node": "^20.10.0",
     "typescript": "^5.6.2",
